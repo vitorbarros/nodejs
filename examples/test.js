@@ -1,10 +1,4 @@
-var prompt = require('./dir/prompt');
+var EventEmitter = require('events').EventEmitter;
+var ee = new EventEmitter();
 
-prompt('What is your name ?', function(data){
-    process.stdout.write(data);
-    process.exit();
-})
-
-process.on('exit', function(){
-    process.stdout.write(' bye bye !! \n');
-});
+ee.emit('onData');
